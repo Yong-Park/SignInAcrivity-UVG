@@ -1,5 +1,6 @@
 package com.uvg.signin
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -32,7 +33,7 @@ class SignInActivity : AppCompatActivity() {
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("17274604318-bc8gjs48156008bi610027cju2tp6844.apps.googleusercontent.com")
+            .requestIdToken("209169211995-es07l3gkdbapuema2qn5g06f821g4bsc.apps.googleusercontent.com")
             .requestEmail()
             .build()
 
@@ -55,6 +56,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
