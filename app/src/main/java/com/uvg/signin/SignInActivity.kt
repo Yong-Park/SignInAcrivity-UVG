@@ -25,17 +25,10 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
 
     lateinit var sign_in_btn: SignInButton
-    //lateinit var welcomeText: TextView
-    //lateinit var font: Typeface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-
-        //welcomeText = findViewById(R.id.welcome)
-        //font = Typeface.createFromAsset(assets, "font/pattaya.ttf")
-
-        //welcomeText.setTypeface(font)
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -62,7 +55,6 @@ class SignInActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             val exception = task.exception
